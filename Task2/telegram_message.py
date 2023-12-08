@@ -40,13 +40,11 @@ async def process_telegram_msg(event):
             events_dataframe.to_csv(FNAME)
 
         new_msg = f'New event https://t.me/{event.sender.username}/{event.id}\n\n'
-        for item in d.items():
+        for item in message_dict.items():
             if item[1][0] is not nan:
                 new_msg = new_msg + item[0] + ": " + str(item[1][0]) + '\n'
 
         await client.send_message(entity=ENTITY, message=new_msg)
-        #new_msg = f'New event posted @{}'
-        await client.send_message(entity=ENTITY, message=message)
 
 client.start()
 client.run_until_disconnected()
