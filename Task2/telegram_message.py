@@ -26,20 +26,20 @@ async def process_telegram_msg(event):
     Processes new messages from Telegram channels
     And stores in a csv file
     '''
-    msg = event.raw_text
+    message = event.raw_text
 
-    if any(ind in msg for ind in indicators):
-        d = process_text(msg)
+    if any(indicator in message for indicator in indicators):
+        message_dict = process_text(message)
         if FNAME in listdir():
-            df = pd.read_csv(FNAME, index_col=0)
-            df = pd.concat([df, pd.DataFrame(d)], axis=0)
-            df.to_csv(FNAME)
+            events_dataframe = pd.read_csv(FNAME, index_col=0)
+            events_dataframe = pd.concat([events_dataframe, pd.DataFrame(message_dict)], axis=0)
+            events_dataframe.to_csv(FNAME)
         else:
-            df = pd.DataFrame(d)
-            df.to_csv(FNAME)
+            events_dataframe = pd.DataFrame(message_dict)
+            events_dataframe.to_csv(FNAME)
 
         #new_msg = f'New event posted @{}'
-        await client.send_message(entity=ENTITY, message=msg)
+        await client.send_message(entity=ENTITY, message=message)
 
 client.start()
 client.run_until_disconnected()
