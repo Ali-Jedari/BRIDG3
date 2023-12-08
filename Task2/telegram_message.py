@@ -6,6 +6,7 @@ from os import listdir
 from telethon import TelegramClient, events
 from process_text import process_text
 import pandas as pd
+from numpy import nan
 
 API_ID = '25857802'
 API_HASH = '186d136e6730a05a749a09e5a9bbda63'
@@ -38,6 +39,12 @@ async def process_telegram_msg(event):
             events_dataframe = pd.DataFrame(message_dict)
             events_dataframe.to_csv(FNAME)
 
+        new_msg = f'New event https://t.me/{event.sender.username}/{event.id}\n\n'
+        for item in d.items():
+            if item[1][0] is not nan:
+                new_msg = new_msg + item[0] + ": " + str(item[1][0]) + '\n'
+
+        await client.send_message(entity=ENTITY, message=new_msg)
         #new_msg = f'New event posted @{}'
         await client.send_message(entity=ENTITY, message=message)
 
