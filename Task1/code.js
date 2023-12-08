@@ -14,9 +14,10 @@ class Course {
 }
 
 function post_table(course_list) {
-    add_header_row("Course", "Rating", "Number of Ratings")
+    add_header_row("Result #", "Course", "Rating", "Number of Ratings")
     for(let i = 0; i < course_list.length; i++) {
-        add_row(course_list[i].name, 
+        add_row(i+1,
+                course_list[i].name, 
                 course_list[i].rating, 
                 course_list[i].num_ratings)
     }
@@ -45,12 +46,20 @@ function add_header_row() {
     table.appendChild(new_row)
 }
 
-course_list = []
-course_list.push(new Course("Economics 100", 1.2, 10))
-course_list.push(new Course("Mathematics 100", 2.5, 100))
-course_list.push(new Course("Economics 200", 3.5, 230))
-course_list.push(new Course("Mathematics 200", 2.3, 321))
+function main() {
+    console.log("Program Start")
+    //TODO: Get courses from csv file
+    //TODO: Convert csv into JSON
+    //TODO: Write courses to csv file?
+    course_list = []
+    course_list.push(new Course("Economics 100", 1.2, 10))
+    course_list.push(new Course("Mathematics 100", 2.5, 100))
+    course_list.push(new Course("Economics 200", 3.5, 230))
+    course_list.push(new Course("Mathematics 200", 2.3, 321))
 
-console.log("Test")
-console.log(course_list)
-post_table(course_list)
+    
+    console.log(course_list)
+    post_table(course_list)
+}
+
+main()
