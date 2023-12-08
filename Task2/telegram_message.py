@@ -31,8 +31,8 @@ async def process_telegram_msg(event):
     if any(ind in msg for ind in indicators):
         d = process_text(msg)
         if FNAME in listdir():
-            df = pd.read_excel(FNAME)
-            df = pd.concat([df, pd.Series(d)], axis=1)
+            df = pd.read_excel(FNAME, index_col=0)
+            df = pd.concat([df, pd.DataFrame(d)], axis=0)
             df.to_excel(FNAME)
         else:
             df = pd.DataFrame(d)
