@@ -18,7 +18,7 @@ channels = ['bridg3_test', 'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
 
 indicators = ['party', 'Party', 'PARTY', 'Event', 'event', 'EVENT']
 ENTITY = 'what_where_when_event_notifier'
-FNAME = 'Events.xlsx'
+FNAME = 'Events.csv'
 
 @client.on(events.NewMessage(chats=channels))
 async def process_telegram_msg(event):
@@ -31,12 +31,12 @@ async def process_telegram_msg(event):
     if any(ind in msg for ind in indicators):
         d = process_text(msg)
         if FNAME in listdir():
-            df = pd.read_excel(FNAME, index_col=0)
+            df = pd.read_csv(FNAME, index_col=0)
             df = pd.concat([df, pd.DataFrame(d)], axis=0)
-            df.to_excel(FNAME)
+            df.to_csv(FNAME)
         else:
             df = pd.DataFrame(d)
-            df.to_excel(FNAME)
+            df.to_csv(FNAME)
 
         #new_msg = f'New event posted @{}'
         await client.send_message(entity=ENTITY, message=msg)
