@@ -1,7 +1,8 @@
 class User {
-    constructor(username, name) {
+    constructor(username, id) {
         this.username = username
-        this.name = name
+        this.id = id
+        this.name = "unnamed"
         this.rating_dict = []
     }
 }
@@ -22,9 +23,8 @@ function post_table(course_list, table_id) {
 
     add_header_row(table_id,
                    "Result #", 
-                   "Course", 
-                   "Rating", 
-                   "Number of Ratings")
+                   "Course Name", 
+                   "Rating")
     for(let i = 0; i < course_list.length; i++) {
         // let course_link = "<a href='" +
         //                   course_list[i].course_id+"'>" +
@@ -32,8 +32,7 @@ function post_table(course_list, table_id) {
         add_row(table_id,
                 i+1,
                 course_list[i].name, 
-                course_list[i].rating, 
-                course_list[i].num_ratings)
+                course_list[i].rating)
     }
 }
 
@@ -89,7 +88,7 @@ function toggle_show(element_id) {
 
 async function main() {
     console.log("Program Start")
-    await update_table("./recommended_courses.json", "recommended-table")
+    await update_table("./rec_courses.json", "recommended-table")
     // await update_table("./all_courses.json", "all-courses-table")
 }
 
