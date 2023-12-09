@@ -8,8 +8,8 @@ from process_text import process_text
 import pandas as pd
 from numpy import nan
 
-API_ID = '25857802'
-API_HASH = '186d136e6730a05a749a09e5a9bbda63'
+API_ID = 'API_ID'
+API_HASH = 'API_HASH'
 client = TelegramClient('anon', API_ID, API_HASH)
 
 channels = ['bridg3_test', 'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
