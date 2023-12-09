@@ -11,8 +11,8 @@ class Course {
         this.name = name
         this.rating = rating
         this.num_ratings = num_ratings
-        this.id = name.toLowerCase().replace(" ", "_")
-                                           .replace(".", "")
+        this.id = name.toLowerCase().replaceAll(" ", "_")
+                                    .replaceAll(".", "")
     }
 }
 

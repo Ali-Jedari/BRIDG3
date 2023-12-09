@@ -1,28 +1,3 @@
 
-{ "courses": [
-    {"name":"EE.PEE 100","rating":1.2,"num_ratings":10,"id":"eepee_100"},
-    {"name":"Mathematics 100","rating":2.5,"num_ratings":100,"id":"mathematics_100"},
-    {"name":"Economics 200","rating":3.5,"num_ratings":230,"id":"economics_200"},
-    {"name":"Mathematics 200","rating":2.3,"num_ratings":321,"id":"mathematics_200"},
-    {"name":"Electronics 600","rating":5.3,"num_ratings":1234,"id":"electronics_600"},
-    {"name":"Power Qaulity 200","rating":3.2,"num_ratings":2,"id":"power_qaulity 200"},
-    {"name":"EE.PEE 101","rating":1.2,"num_ratings":10,"id":"eepee_101"},
-    {"name":"Mathematics 101","rating":2.5,"num_ratings":100,"id":"mathematics_101"},
-    {"name":"Economics 201","rating":3.5,"num_ratings":230,"id":"economics_201"},
-    {"name":"Mathematics 201","rating":2.3,"num_ratings":321,"id":"mathematics_201"},
-    {"name":"Electronics 601","rating":5.3,"num_ratings":1234,"id":"electronics_601"},
-    {"name":"Power Qaulity 201","rating":3.2,"num_ratings":2,"id":"power_qaulity 201"},
-    {"name":"EE.PEE 102","rating":1.2,"num_ratings":10,"id":"eepee_102"},
-    {"name":"Mathematics 102","rating":2.5,"num_ratings":100,"id":"mathematics_102"},
-    {"name":"Economics 202","rating":3.5,"num_ratings":230,"id":"economics_202"},
-    {"name":"Mathematics 202","rating":2.3,"num_ratings":321,"id":"mathematics_202"},
-    {"name":"Electronics 602","rating":5.3,"num_ratings":1234,"id":"electronics_602"},
-    {"name":"Power Qaulity 202","rating":3.2,"num_ratings":2,"id":"power_qaulity 202"},
-    {"name":"EE.PEE 102","rating":1.2,"num_ratings":10,"id":"eepee_102"},
-    {"name":"Mathematics 102","rating":2.5,"num_ratings":100,"id":"mathematics_102"},
-    {"name":"Economics 202","rating":3.5,"num_ratings":230,"id":"economics_202"},
-    {"name":"Mathematics 202","rating":2.3,"num_ratings":321,"id":"mathematics_202"},
-    {"name":"Electronics 602","rating":5.3,"num_ratings":1234,"id":"electronics_602"},
-    {"name":"Power Qaulity 202","rating":3.2,"num_ratings":2,"id":"power_qaulity 202"}
-]
+{ "courses": [{"name":"EE.PEE 100","rating":1.2,"num_ratings":10,"id":"eepee_100"},{"name":"Mathematics 100","rating":2.5,"num_ratings":100,"id":"mathematics_100"},{"name":"Economics 200","rating":3.5,"num_ratings":230,"id":"economics_200"},{"name":"Mathematics 200","rating":2.3,"num_ratings":321,"id":"mathematics_200"},{"name":"Electronics 600","rating":5.3,"num_ratings":1234,"id":"electronics_600"},{"name":"Power Qaulity 200","rating":3.2,"num_ratings":2,"id":"power_qaulity_200"},{"name":"EE.PEE 101","rating":1.2,"num_ratings":10,"id":"eepee_101"},{"name":"Mathematics 101","rating":2.5,"num_ratings":100,"id":"mathematics_101"},{"name":"Economics 201","rating":3.5,"num_ratings":230,"id":"economics_201"},{"name":"Mathematics 201","rating":2.3,"num_ratings":321,"id":"mathematics_201"},{"name":"Electronics 601","rating":5.3,"num_ratings":1234,"id":"electronics_601"},{"name":"Power Qaulity 201","rating":3.2,"num_ratings":2,"id":"power_qaulity_201"},{"name":"EE.PEE 102","rating":1.2,"num_ratings":10,"id":"eepee_102"},{"name":"Mathematics 102","rating":2.5,"num_ratings":100,"id":"mathematics_102"},{"name":"Economics 202","rating":3.5,"num_ratings":230,"id":"economics_202"},{"name":"Mathematics 202","rating":2.3,"num_ratings":321,"id":"mathematics_202"},{"name":"Electronics 602","rating":5.3,"num_ratings":1234,"id":"electronics_602"},{"name":"Power Qaulity 202","rating":3.2,"num_ratings":2,"id":"power_qaulity_202"},{"name":"EE.PEE 102","rating":1.2,"num_ratings":10,"id":"eepee_102"},{"name":"Mathematics 102","rating":2.5,"num_ratings":100,"id":"mathematics_102"},{"name":"Economics 202","rating":3.5,"num_ratings":230,"id":"economics_202"},{"name":"Mathematics 202","rating":2.3,"num_ratings":321,"id":"mathematics_202"},{"name":"Electronics 602","rating":5.3,"num_ratings":1234,"id":"electronics_602"},{"name":"Power Qaulity 202","rating":3.2,"num_ratings":2,"id":"power_qaulity_202"}]
 }    
