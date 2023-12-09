@@ -1,0 +1,9 @@
+{
+"courses": [
+    {"name":"Economics 100","rating":1.2,"num_ratings":10},
+    {"name":"Mathematics 100","rating":2.5,"num_ratings":100},
+    {"name":"Economics 200","rating":3.5,"num_ratings":230},
+    {"name":"Mathematics 200","rating":2.3,"num_ratings":321},
+    {"name":"Electronics 600","rating":5.3,"num_ratings":1234}
+]
+}
