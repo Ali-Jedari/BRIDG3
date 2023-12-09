@@ -1,0 +1,28 @@
+{
+"courses": [
+    {"name":"EE.PEE 100","rating":1.2,"num_ratings":10},
+    {"name":"Mathematics 100","rating":2.5,"num_ratings":100},
+    {"name":"Economics 200","rating":3.5,"num_ratings":230},
+    {"name":"Mathematics 200","rating":2.3,"num_ratings":321},
+    {"name":"Electronics 600","rating":5.3,"num_ratings":1234},
+    {"name":"Power Qaulity 200","rating":3.2,"num_ratings":2},
+    {"name":"EE.PEE 101","rating":1.2,"num_ratings":10},
+    {"name":"Mathematics 101","rating":2.5,"num_ratings":100},
+    {"name":"Economics 201","rating":3.5,"num_ratings":230},
+    {"name":"Mathematics 201","rating":2.3,"num_ratings":321},
+    {"name":"Electronics 601","rating":5.3,"num_ratings":1234},
+    {"name":"Power Qaulity 201","rating":3.2,"num_ratings":2},
+    {"name":"EE.PEE 102","rating":1.2,"num_ratings":10},
+    {"name":"Mathematics 102","rating":2.5,"num_ratings":100},
+    {"name":"Economics 202","rating":3.5,"num_ratings":230},
+    {"name":"Mathematics 202","rating":2.3,"num_ratings":321},
+    {"name":"Electronics 602","rating":5.3,"num_ratings":1234},
+    {"name":"Power Qaulity 202","rating":3.2,"num_ratings":2},
+    {"name":"EE.PEE 102","rating":1.2,"num_ratings":10},
+    {"name":"Mathematics 102","rating":2.5,"num_ratings":100},
+    {"name":"Economics 202","rating":3.5,"num_ratings":230},
+    {"name":"Mathematics 202","rating":2.3,"num_ratings":321},
+    {"name":"Electronics 602","rating":5.3,"num_ratings":1234},
+    {"name":"Power Qaulity 202","rating":3.2,"num_ratings":2}
+]
+}
