@@ -99,10 +99,23 @@ def main():
     if DF is None:
         DF = read_dataset()
     ratings = read_user_info()
-    #user = ratings['user_id'].unique()[0]
     nn = _find_nearest_neighbors(ratings)
     recommendations = recommend_courses(ratings, nn)
-    recommendations.to_json('../rec_courses.json')
+    movies = pd.read_csv('ml-latest-small/movies.csv', usecols=range(2))
+    movies.rename({'movieId': 'course_id'}, axis=1, inplace=True)
+    res = pd.merge(recommendations, movies, on='course_id', how='inner', validate='1:1')
+    res.rename({'title': 'name'}, axis=1, inplace=True)
+    res.reset_index(drop=True, inplace=True)
+    final_dic = {'courses': []}
+    for i in range(res.shape[0]):
+        final_dic['courses'].append({})
+        final_dic['courses'][-1].update({'name': res.loc[i, 'name']})
+        final_dic['courses'][-1].update({'rating': str(res.loc[i, 'rating'])})
+        final_dic['courses'][-1].update({'id': str(res.loc[i, 'course_id'])})
+
+    json_str = json.dumps(final_dic)
+    with open('../rec_courses.json', 'w', encoding='utf-8') as f:
+        f.write(json_str)
 
 if __name__ == '__main__':
     main()
