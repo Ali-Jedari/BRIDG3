@@ -11,10 +11,14 @@ class Course {
         this.rating = rating
         this.num_ratings = num_ratings
         this.course_id = name.toLowerCase().replace(" ", "_")
+                                           .replace(".", "")
     }
 }
 
 function post_table(course_list, table_id) {
+    let table = document.getElementById(table_id)
+    table.innerHTML = "" //Delete table if already exists
+
     add_header_row(table_id,
                    "Result #", 
                    "Course", 
