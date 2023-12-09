@@ -1,3 +1,7 @@
+'''
+Telegram Message Processor
+'''
+
 from numpy import nan
 
 def process_text(msg):
