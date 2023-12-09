@@ -1,6 +1,7 @@
 class User {
-    constructor(username) {
+    constructor(username, name) {
         this.username = username
+        this.name = name
         this.rating_dict = {}
     }
 }
@@ -18,6 +19,7 @@ class Course {
 function post_table(course_list, table_id) {
     let table = document.getElementById(table_id)
     table.innerHTML = "" //Delete table if already exists
+    console.log(table)
 
     add_header_row(table_id,
                    "Result #", 
@@ -79,7 +81,10 @@ async function update_table(file, table_id) {
 
 async function main() {
     console.log("Program Start")
-    await update_table("./data.json", "course-table")
+    await update_table("./recommended_courses.json", "recommended-table")
+    await update_table("./all_courses.json", "all-courses-table")
+    let user_connor = new User("connorbehehe", "Connor Behehe")
+    console.log(user_connor)
 }
 
 main()
