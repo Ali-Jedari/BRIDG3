@@ -19,7 +19,6 @@ class Course {
 function post_table(course_list, table_id) {
     let table = document.getElementById(table_id)
     table.innerHTML = "" //Delete table if already exists
-    console.log(table)
 
     add_header_row(table_id,
                    "Result #", 
@@ -27,12 +26,12 @@ function post_table(course_list, table_id) {
                    "Rating", 
                    "Number of Ratings")
     for(let i = 0; i < course_list.length; i++) {
-        let course_link = "<a href='" +
-                          course_list[i].course_id+"'>" +
-                          course_list[i].name+"</a>"
+        // let course_link = "<a href='" +
+        //                   course_list[i].course_id+"'>" +
+        //                   course_list[i].name+"</a>"
         add_row(table_id,
                 i+1,
-                course_link, 
+                course_list[i].name, 
                 course_list[i].rating, 
                 course_list[i].num_ratings)
     }
@@ -76,19 +75,22 @@ async function update_table(file, table_id) {
             )
         )   
     }
-    console.log(JSON.stringify(course_list))
     post_table(course_list, table_id)
   }
+
+function toggle_show(element_id) {
+    var element = document.getElementById(element_id)
+    if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+    }
+}
 
 async function main() {
     console.log("Program Start")
     await update_table("./recommended_courses.json", "recommended-table")
-    await update_table("./all_courses.json", "all-courses-table")
-    let user_connor = new User("connorbehehe", "Connor Behehe")
-    user_connor.rating_dict.push({course_id: "course1", rating: 3.0})
-    user_connor.rating_dict.push({key: "course2", value: 3.0})
-    user_connor.rating_dict.push({key: "course3", value: 3.0})
-    console.log(user_connor)
+    // await update_table("./all_courses.json", "all-courses-table")
 }
 
 main()
