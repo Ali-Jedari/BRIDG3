@@ -2,7 +2,7 @@ class User {
     constructor(username, name) {
         this.username = username
         this.name = name
-        this.rating_dict = {}
+        this.rating_dict = []
     }
 }
 
@@ -11,7 +11,7 @@ class Course {
         this.name = name
         this.rating = rating
         this.num_ratings = num_ratings
-        this.course_id = name.toLowerCase().replace(" ", "_")
+        this.id = name.toLowerCase().replace(" ", "_")
                                            .replace(".", "")
     }
 }
@@ -76,6 +76,7 @@ async function update_table(file, table_id) {
             )
         )   
     }
+    console.log(JSON.stringify(course_list))
     post_table(course_list, table_id)
   }
 
@@ -84,6 +85,9 @@ async function main() {
     await update_table("./recommended_courses.json", "recommended-table")
     await update_table("./all_courses.json", "all-courses-table")
     let user_connor = new User("connorbehehe", "Connor Behehe")
+    user_connor.rating_dict.push({course_id: "course1", rating: 3.0})
+    user_connor.rating_dict.push({key: "course2", value: 3.0})
+    user_connor.rating_dict.push({key: "course3", value: 3.0})
     console.log(user_connor)
 }
 
