@@ -17,7 +17,6 @@ channels = ['bridg3_test', 'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
        'tampereenteekkarit', 'indecs', 'miktiedotus', 'ttkamerattiedotus',
        'treytiedottaa', 'hiukkanentiedotus', 'tekopiskelijat']
 
-indicators = ['party', 'Party', 'PARTY', 'Event', 'event', 'EVENT']
 ENTITY = 'Wright_Channel'
 FNAME = 'Events.csv'
 
@@ -29,22 +28,22 @@ async def process_telegram_msg(event):
     '''
     message = event.raw_text
 
-    if any(indicator in message for indicator in indicators):
-        message_dict = process_text(message)
-        if FNAME in listdir():
-            events_dataframe = pd.read_csv(FNAME, index_col=0)
-            events_dataframe = pd.concat([events_dataframe, pd.DataFrame(message_dict)], axis=0)
-            events_dataframe.to_csv(FNAME)
-        else:
-            events_dataframe = pd.DataFrame(message_dict)
-            events_dataframe.to_csv(FNAME)
+    #if any(indicator in message for indicator in indicators):
+    message_dict = process_text(message)
+    if FNAME in listdir():
+        events_dataframe = pd.read_csv(FNAME, index_col=0)
+        events_dataframe = pd.concat([events_dataframe, pd.DataFrame(message_dict)], axis=0)
+        events_dataframe.to_csv(FNAME)
+    else:
+        events_dataframe = pd.DataFrame(message_dict)
+        events_dataframe.to_csv(FNAME)
 
-        new_msg = f'New event https://t.me/{event.sender.username}/{event.id}\n\n'
-        for item in message_dict.items():
-            if item[1][0] is not nan:
-                new_msg = new_msg + item[0] + ": " + str(item[1][0]) + '\n'
+    new_msg = f'New event!\nhttps://t.me/{event.sender.username}/{event.id}\n\n'
+    for item in message_dict.items():
+        if item[1][0] is not nan:
+            new_msg = new_msg + item[0] + ": " + str(item[1][0]) + '\n'
 
-        await client.send_message(entity=ENTITY, message=new_msg)
+    await client.send_message(entity=ENTITY, message=new_msg)
 
 client.start()
 client.run_until_disconnected()
