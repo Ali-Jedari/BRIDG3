@@ -2,8 +2,8 @@
 "name":"Connor Behehe",
 "id": 69420,
 "rating_dict":[
-    {"course_id":"5","rating":3},
-    {"course_id":"10","rating":5},
-    {"course_id":"15","rating":4},
-    {"course_id":"20","rating":1}]
+    {"course_id":5 ,"rating":3},
+    {"course_id": 10,"rating":5},
+    {"course_id": 15 ,"rating":4},
+    {"course_id": 20 ,"rating":1}]
 }
