@@ -10,6 +10,7 @@ class Course {
         this.name = name
         this.rating = rating
         this.num_ratings = num_ratings
+        this.course_id = name.toLowerCase().replace(" ", "_")
     }
 }
 
@@ -20,9 +21,12 @@ function post_table(course_list, table_id) {
                    "Rating", 
                    "Number of Ratings")
     for(let i = 0; i < course_list.length; i++) {
+        let course_link = "<a href='" +
+                          course_list[i].course_id+"'>" +
+                          course_list[i].name+"</a>"
         add_row(table_id,
                 i+1,
-                course_list[i].name, 
+                course_link, 
                 course_list[i].rating, 
                 course_list[i].num_ratings)
     }
@@ -68,10 +72,10 @@ async function update_table(file, table_id) {
     }
     post_table(course_list, table_id)
   }
-  
-function main() {
+
+async function main() {
     console.log("Program Start")
-    update_table("./data.json", "course-table")
+    await update_table("./data.json", "course-table")
 }
 
 main()
