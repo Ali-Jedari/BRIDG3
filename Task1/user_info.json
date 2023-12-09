@@ -1,8 +1,9 @@
 {"username":"connorbehehe",
 "name":"Connor Behehe",
+"id": 69420,
 "rating_dict":[
-    {"course_id":"mathematics_100","rating":3},
-    {"course_id":"mathematics_202","rating":5},
-    {"course_id":"eepee_102","rating":4},
-    {"course_id":"economics_200","rating":1}]
+    {"course_id":"5","rating":3},
+    {"course_id":"10","rating":5},
+    {"course_id":"15","rating":4},
+    {"course_id":"20","rating":1}]
 }
