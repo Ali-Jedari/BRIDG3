@@ -18,7 +18,7 @@ channels = ['bridg3_test', 'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
        'treytiedottaa', 'hiukkanentiedotus', 'tekopiskelijat']
 
 indicators = ['party', 'Party', 'PARTY', 'Event', 'event', 'EVENT']
-ENTITY = 'what_where_when_event_notifier'
+ENTITY = 'Wright_Channel'
 FNAME = 'Events.csv'
 
 @client.on(events.NewMessage(chats=channels))
