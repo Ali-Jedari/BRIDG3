@@ -12,13 +12,17 @@ API_ID = 'API_ID'
 API_HASH = 'API_HASH'
 client = TelegramClient('anon', API_ID, API_HASH)
 
-channels = ['bridg3_test', 'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
-       'TARAKItiedottaa', 'ykinkuumalinja', 'tietoteekkarikilta',
-       'tampereenteekkarit', 'indecs', 'miktiedotus', 'ttkamerattiedotus',
-       'treytiedottaa', 'hiukkanentiedotus', 'tekopiskelijat']
+# put the channels you wanna listen to here
+# these are sample channels from the guilds of Tampere University
+channels = [
+    'skilta', 'infoluuppi', 'intoreminder', 'tiedotus',
+    'TARAKItiedottaa', 'ykinkuumalinja', 'tietoteekkarikilta',
+    'tampereenteekkarit', 'indecs', 'miktiedotus', 'ttkamerattiedotus',
+    'treytiedottaa', 'hiukkanentiedotus', 'tekopiskelijat'
+    ]
 
-ENTITY = 'Wright_Channel'
-FNAME = 'Events.csv'
+ENTITY = 'CHANNEL_NAME' # put your channel username here
+FNAME = 'events.csv'
 
 @client.on(events.NewMessage(chats=channels))
 async def process_telegram_msg(event):

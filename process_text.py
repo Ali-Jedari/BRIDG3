@@ -1,16 +1,16 @@
 '''
-Telegram Message Processor
+Process Telegram Messages
 '''
 
 from numpy import nan
 
 def process_text(msg):
     '''
-    Process message texts
+    Process messages to detect event announcements in messages
     '''
     message = msg.strip('\\')
     lines = message.split('\n')
-    print(lines)
+    #print(lines)
     what, when, where, why = nan, nan, nan, nan
 
     for line in lines:
@@ -27,5 +27,5 @@ def process_text(msg):
         if ("WHY:" in l or "WHY?" in l) and why is nan:
             why = l.replace("WHY", "")[1:].strip()
 
-    print(f'what: {what}, when: {when}, where: ')
+    #print(f'what: {what}, when: {when}, where: ')
     return {'What': [what], 'When': [when], 'Where': [where], 'Why': [why]}
